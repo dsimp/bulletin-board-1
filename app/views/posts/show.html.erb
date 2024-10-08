@@ -18,68 +18,68 @@
       </div>
     </div>
 
-    <dl>
+    <!--<dl>
       <dt>
         Title
       </dt>
       <dd>
-        <%= @the_post.title %>
-      </dd>
+        <%#= @the_post.title %>-->
+<!--      </dd>
 
       <dt>
         Body
       </dt>
       <dd>
-        <%= @the_post.body %>
-      </dd>
+        <%#= @the_post.body %>-->
+<!--      </dd>
 
       <dt>
         Expires on
       </dt>
       <dd>
-        <%= @the_post.expires_on %>
-      </dd>
+        <%#= @the_post.expires_on %>-->
+<!--      </dd>
 
       <dt>
         Board
       </dt>
       <dd>
-        <%= @the_post.board_id %>
-      </dd>
+        <%#= @the_post.board_id %>-->
+<!--      </dd>
 
       <dt>
         Created at
       </dt>
       <dd>
-        <%= time_ago_in_words(@the_post.created_at) %> ago
-      </dd>
+        <%#= time_ago_in_words(@the_post.created_at) %> ago-->
+<!--      </dd>
 
       <dt>
         Updated at
       </dt>
       <dd>
-        <%= time_ago_in_words(@the_post.updated_at) %> ago
-      </dd>
-    </dl>
+        <%#= time_ago_in_words(@the_post.updated_at) %> ago-->
+<!--      </dd>
+    </dl>-->
   </div>
 </div>
 
 <hr>
 
 
-<div>
+<<!--div>
   <div>
     <h2>
       Edit post
     </h2>
 
-    <form action="/modify_post/<%= @the_post.id %>"  method="post" >
+    <form action="/modify_post/<%#= @the_post.id %>"  method="post" >
       <div>
         <label for="title_box">
           Title
         </label>
 
-        <input type="text" id="title_box" name="query_title" value="<%= @the_post.title %>">
+        <input type="text" id="title_box" name="query_title" value="<%#= @the_post.title %>">
       </div>
 
       <div>
@@ -87,7 +87,7 @@
           Body
         </label>
 
-        <textarea id="body_box" name="query_body"><%= @the_post.body %></textarea>
+        <textarea id="body_box" name="query_body"><%#= @the_post.body %></textarea>
       </div>
 
       <div>
@@ -95,7 +95,7 @@
           Expires on
         </label>
 
-        <input type="date" id="expires_on_box" name="query_expires_on" value="<%= @the_post.expires_on %>">
+        <input type="date" id="expires_on_box" name="query_expires_on" value="<%#= @the_post.expires_on %>">
       </div>
 
       <div>
@@ -103,7 +103,7 @@
           Board
         </label>
 
-        <input type="text" id="board_id_box" name="query_board_id" value="<%= @the_post.board_id %>">
+        <input type="text" id="board_id_box" name="query_board_id" value="<%#= @the_post.board_id %>">
       </div>
 
       <button>

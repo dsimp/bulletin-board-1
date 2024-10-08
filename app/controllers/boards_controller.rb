@@ -13,7 +13,10 @@ class BoardsController < ApplicationController
     matching_boards = Board.where({ :id => the_id })
 
     @the_board = matching_boards.at(0)
-
+    posts_for_board = Post.where({ :board_id => @the_board.id })
+    current_date = Date.today
+    @posts_active = posts_for_board.where("expires_on >= ?", current_date)
+    @posts_expired = posts_for_board.where("expires_on < ?", current_date)
     render({ :template => "boards/show" })
   end
 
@@ -37,7 +40,7 @@ class BoardsController < ApplicationController
 
     if the_board.valid?
       the_board.save
-      redirect_to("/boards/#{the_board.id}", { :notice => "Board updated successfully."} )
+      redirect_to("/boards/#{the_board.id}", { :notice => "Board updated successfully." })
     else
       redirect_to("/boards/#{the_board.id}", { :alert => the_board.errors.full_messages.to_sentence })
     end
@@ -49,6 +52,6 @@ class BoardsController < ApplicationController
 
     the_board.destroy
 
-    redirect_to("/boards", { :notice => "Board deleted successfully."} )
+    redirect_to("/boards", { :notice => "Board deleted successfully." })
   end
 end
